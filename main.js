@@ -1,4 +1,4 @@
-// mình bắt đầu nhé hôm nay mic hư :)
+﻿// mình bắt đầu nhé hôm nay mic hư :)
 var canvas= document.getElementById('gamezone');
 var context= canvas.getContext('2d');
 var scoreshow=document.getElementById('score');
@@ -19,7 +19,7 @@ var khoangcachhaiong=140; // mình xin phép đặt tên tiếng việt để c�
 var khoangcachdenongduoi; // biến này là khoảng cách từ đầu ống trên đến vị trí đầu ống dưới
 // tạo ra 1 object chim với tọa độ x y là 1 nữa canvas
 var bird={
-    x: hinhnenchinh.width/5,
+    x: hinhnenchinh.width/5 + 100,
     y: hinhnenchinh.height/2
 }
 var ong=[]; //tạo mảng ống để chứa các ống di chuỷen
@@ -54,10 +54,10 @@ function run(){
                 // random này các bạn làm theo là được
             })
         }
+	if(ong[i].x==bird.x)score++;  
         if(ong[i].x ==0 )ong.splice(0,1);
         // nếu ống đụng lề trái thì xóa nó đi để tránh mảng ống
         //  bị đầy làm chậm       
-        if(ong[i].x==bird.x)score++;  
         // giờ làm cái khó nhất là thua  
         if(bird.y+birdimg.height==canvas.height||
         bird.x+birdimg.width>= ong[i].x && bird.x <= ong[i].x +ongtren.width
